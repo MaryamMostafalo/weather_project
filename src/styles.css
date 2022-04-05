@@ -91,3 +91,10 @@ a {
   text-align: center;
   font-size: 12px;
 }
+
+.footer{
+  display: block;
+  margin: 10px auto;
+  font-size: 10px;
+  text-align: center;
+}
