@@ -1,0 +1,93 @@
+span,
+div {
+  font-family: "Nunito", sans-serif;
+  color: #002761;
+}
+.main_card {
+  background: #ffffff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 10px;
+  width: 70%;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.city_search {
+  width: 60%;
+  margin: 10px;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  background: #e6f0ff;
+  padding: 10px 20px;
+  color: #002761;
+  margin: 10px auto;
+  border: #f7fdff solid 1px;
+  border-radius: 10px;
+}
+.button_search {
+  margin: 10px;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  background: #002761;
+  padding: 10px 20px;
+  color: #e6f0ff;
+  margin: 10px auto;
+  border: #f7fdff solid 1px;
+  border-radius: 10px;
+}
+.button_location {
+  background: #9e89d6;
+}
+.button_search:hover {
+  background: #17458a;
+}
+
+.city {
+  text-align: center;
+  font-size: 24px;
+}
+.date {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.degree {
+  margin: 20px;
+  text-align: center;
+  font-size: 28px;
+}
+.humidity,
+.wind {
+  font-size: 16px;
+}
+.info {
+  background: #e6f0ff;
+  border-radius: 10px;
+  width: 50%;
+  padding: 30px;
+  margin: 60px auto;
+}
+.day_container {
+  margin: 10px;
+}
+.days {
+  background: #e6f0ff;
+  border-radius: 10px;
+  padding: 20px 5px 20px 5px;
+  margin: 10px 5px;
+}
+.days:hover {
+  background: #cfe2ff;
+  cursor: pointer;
+  transition: all 200ms ease-out;
+}
+
+.days div {
+  text-align: center;
+  font-size: 12px;
+}

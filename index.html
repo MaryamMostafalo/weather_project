@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    <div class="main_card">
+        <form class="search" id="search">
+            <input type="text" placeholder="type here" class="city_search" id="city_search" />
+            <input type="submit" class="button_search" id="submit" />
+            <button class="button_search button_location" id="button_location">Your Location</button>
+          </form>
+         
+          <div class="info">
+            <div class="city" id="city_name">Tehran</div>
+            <div class="degree">
+              <span id="degree">24</span>
+              <span id="emoji">🌞</span>
+            </div>
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-5 humidity">
+                        <span >humidity:</span>
+                        <span id="humidity">90%</span>
+                    </div>
+                    <div class="col-5 wind">
+                        <span>wind:</span>
+                        <span id="wind">5 km/h</span>
+                    </div>
+                  </div>
+              </div>
+            <div class="date" id="date">date</div>
+            <div class="date" id="location">location</div>
+         </div>
+
+         <div> next 10 days </div>
+        <div class="container day_container">
+         <div class="row align-items-end">
+            <div class="col days">
+                <div>Saturday</div>
+                <div>🌞</div>
+                <div>24°c</div>
+            </div>
+            <div class="col days">
+                <div>Sunday</div>
+                <div>🌧</div>
+                <div>10°c</div>
+            </div>
+            <div class="col days">
+                <div>Monday</div>
+                <div>🌤</div>
+                <div>15°c</div>
+            </div>
+            <div class="col days">
+                <div>Tuesday</div>
+                <div>🌛</div>
+                <div>20°c</div>
+            </div> 
+             <div class="col days">
+                <div>Wednesday</div>
+                <div>❄</div>
+                <div>1°c</div>
+            </div> 
+             <div class="col days">
+                <div>Thursday</div>
+                <div>🌨</div>
+                <div>12°c</div>
+            </div> 
+             <div class="col days">
+                <div>Friday</div>
+                <div>🌧</div>
+                <div>14°c</div>
+            </div>  
+            <div class="col days">
+                <div>Saturday</div>
+                <div>🌞</div>
+                <div>22°c</div>
+            </div> 
+             <div class="col days">
+                <div>Sunday</div>
+                <div>🌞</div>
+                <div>20°c</div>
+            </div>
+          </div>
+    </div>
+    <script src="src/index.js"></script>
+</body>
+</html>
