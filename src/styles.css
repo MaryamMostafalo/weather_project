@@ -98,3 +98,11 @@ a {
   font-size: 10px;
   text-align: center;
 }
+.change_degree{
+  color: #002761;
+}
+
+.change_degree:hover {
+  cursor: pointer;
+  color: #17458a;
+}

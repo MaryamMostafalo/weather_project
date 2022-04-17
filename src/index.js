@@ -45,6 +45,26 @@ function currentPosition(){
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
+function changeDegreeToFar() {
+  if (cel == true && far == false){
+  far = true;
+  cel = false;
+  let degree = document.querySelector("#degree");
+  let x = parseInt(document.querySelector("#degree").innerHTML);
+  degree.innerHTML =Math.round( (x * 9/5) + 32);
+  }
+}
+function changeDegreeToCel() {
+  if(cel == false && far == true){
+  cel = true;
+  far = false;
+
+  let degree = document.querySelector("#degree");
+  let x = parseInt(document.querySelector("#degree").innerHTML);
+  degree.innerHTML = Math.round((x - 32) * 5/9);
+  }
+}
+
 
 let searchForm = document.querySelector("#search");
 searchForm.addEventListener("submit",searchFunc);
@@ -61,3 +81,10 @@ date.innerHTML = days[now.getDay()] +" "+  now.getHours()+":"+minute;
 let button_location = document.querySelector("#button_location");
 button_location.addEventListener("click",currentPosition);
 
+
+let button_far = document.querySelector("#change_degree_f");
+button_far.addEventListener("click",changeDegreeToFar);
+let button_cel = document.querySelector("#change_degree_c");
+button_cel.addEventListener("click",changeDegreeToCel);
+let far = false;
+let cel = true;
