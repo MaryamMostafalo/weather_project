@@ -20,6 +20,9 @@ function displayWeather(response){
   degree.innerHTML = Math.round(currentDegree);
   wind.innerHTML = (response.data.wind.speed) +"km/h";
   humidity.innerHTML = (response.data.main.humidity) +"%";
+   let description = document.querySelector("#description");
+  let weatherDescription = response.data.weather[0].description;
+  description.innerHTML = weatherDescription;
   let emoji = "🌞"
   if(currentDegree<0){
     emoji = "❄"
@@ -73,10 +76,14 @@ let now = new Date();
 let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 let date = document.querySelector("#date");
 let minute = now.getMinutes();
+let houre =  now.getHours();
 if(minute<10){
   minute = "0"+minute;
 }
-date.innerHTML = days[now.getDay()] +" "+  now.getHours()+":"+minute;
+if(houre<10){
+  houre = "0"+houre;
+}
+date.innerHTML = days[now.getDay()] +" "+ houre+":"+minute;
 
 let button_location = document.querySelector("#button_location");
 button_location.addEventListener("click",currentPosition);
