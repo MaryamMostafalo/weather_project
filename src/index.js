@@ -1,12 +1,15 @@
 
-function searchFunc(event){
-event.preventDefault();
-  let citySearch = document.querySelector("#city_search");   
+function searchFunc(city){
     let key = "573ad8fa32ebfbbc89fdc5d201e22d95";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch.value}&appid=${key}&units=metric`;
-
-      axios.get(url).then(displayWeather);
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
+    axios.get(url).then(displayWeather);
       
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let citySearch = document.querySelector("#city_search"); 
+  search(citySearch.value);
 }
 
 function displayWeather(response){
@@ -111,7 +114,7 @@ function getForecast(coordinates) {
 }
 
 let searchForm = document.querySelector("#search");
-searchForm.addEventListener("submit",searchFunc);
+searchForm.addEventListener("submit",handleSubmit);
 
 let now = new Date();
 let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -136,3 +139,5 @@ let button_cel = document.querySelector("#change_degree_c");
 button_cel.addEventListener("click",changeDegreeToCel);
 let far = false;
 let cel = true;
+
+searchFunc("paris");
