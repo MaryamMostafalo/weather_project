@@ -9,7 +9,7 @@ function searchFunc(city){
 function handleSubmit(event) {
   event.preventDefault();
   let citySearch = document.querySelector("#city_search"); 
-  search(citySearch.value);
+  searchFunc(citySearch.value);
 }
 
 function displayWeather(response){
