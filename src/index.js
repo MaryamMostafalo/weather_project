@@ -68,6 +68,24 @@ function changeDegreeToCel() {
   }
 }
 
+function displayForcast(){
+  let forcastElement = document.querySelector("#forcast");
+
+  let forcastHtml = ` <div class="row align-items-end">`; 
+  let days = ["sun","mon","tue"];
+  days.forEach(function(day){
+  forcastHtml = forcastHtml+` 
+  <div class="col days">
+   <div>${day}</div>
+   <div>🌧</div>
+   <div>10°c</div>
+  </div>`;
+  });
+  
+ forcastHtml =  forcastHtml + `</div>`;
+forcastElement.innerHTML = forcastHtml;           
+       
+}
 
 let searchForm = document.querySelector("#search");
 searchForm.addEventListener("submit",searchFunc);
@@ -95,3 +113,5 @@ let button_cel = document.querySelector("#change_degree_c");
 button_cel.addEventListener("click",changeDegreeToCel);
 let far = false;
 let cel = true;
+
+displayForcast();
