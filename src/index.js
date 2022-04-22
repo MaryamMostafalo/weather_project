@@ -71,24 +71,37 @@ function changeDegreeToCel() {
 }
 
 function displayForcast(response){
-  console.log(2);
-  console.log(response.data);
+ 
   let forcastElement = document.querySelector("#forcast");
-
+  let forecastResponse = response.data.daily;
   let forcastHtml = ` <div class="row align-items-end">`; 
-  let days = ["sun","mon","tue"];
-  days.forEach(function(day){
+
+  forecastResponse.forEach(function(day){
   forcastHtml = forcastHtml+` 
   <div class="col days">
-   <div>${day}</div>
-   <div>🌧</div>
-   <div>10°c</div>
+   <div>${formatDay(day.dt)}</div>
+   <div><img 
+          src="http://openweathermap.org/img/wn/${
+            day.weather[0].icon
+          }@2x.png"
+          alt=""
+          width="42"
+        /></div>
+   <div>${Math.round(day.temp.day)}°</div>
   </div>`;
   });
   
  forcastHtml =  forcastHtml + `</div>`;
 forcastElement.innerHTML = forcastHtml;           
        
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
 }
 
 function getForecast(coordinates) {
