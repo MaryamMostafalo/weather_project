@@ -33,6 +33,8 @@ function displayWeather(response){
    emoji = "⛅"
   }
   emojiSpan.innerHTML = emoji;
+
+getForecast(response.data.coord);
 }
 
 function showPosition(position) {
@@ -68,7 +70,9 @@ function changeDegreeToCel() {
   }
 }
 
-function displayForcast(){
+function displayForcast(response){
+  console.log(2);
+  console.log(response.data);
   let forcastElement = document.querySelector("#forcast");
 
   let forcastHtml = ` <div class="row align-items-end">`; 
@@ -85,6 +89,12 @@ function displayForcast(){
  forcastHtml =  forcastHtml + `</div>`;
 forcastElement.innerHTML = forcastHtml;           
        
+}
+
+function getForecast(coordinates) {
+  let key = "573ad8fa32ebfbbc89fdc5d201e22d95";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${key}&units=metric`;
+  axios.get(apiUrl).then(displayForcast);
 }
 
 let searchForm = document.querySelector("#search");
@@ -113,5 +123,3 @@ let button_cel = document.querySelector("#change_degree_c");
 button_cel.addEventListener("click",changeDegreeToCel);
 let far = false;
 let cel = true;
-
-displayForcast();
